@@ -1,0 +1,14 @@
+services:
+
+  dnext_form_builder.transformer_extended:
+    class: Drupal\dnext_form_builder\TransformerExtended
+    arguments:
+      ['@module_handler']
+  dnext_form_builder.webform_submit_subscriber:
+    class: Drupal\dnext_form_builder\EventSubscriber\WebformSubmitSubscriber
+    arguments:
+      [
+        '@event_dispatcher',
+      ]
+    tags:
+      - { name: event_subscriber }

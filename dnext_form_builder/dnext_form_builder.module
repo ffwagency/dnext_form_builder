@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\dnext_form_builder\TransformerExtended;
+
+/**
+ * Implements hook_webform_jsonschema_schema_alter().
+ */
+function dnext_form_builder_webform_jsonschema_schema_alter(array &$schema, \Drupal\webform\Entity\Webform $webform) {
+
+  // Load the json schema transformer extended service.
+  /** @var TransformerExtended $jsonSchemaTransformerExt */
+  $jsonSchemaTransformerExt = \Drupal::service('dnext_form_builder.transformer_extended');
+  $schema = $jsonSchemaTransformerExt->toJsonSchemaExtended($schema, $webform);
+
+}
+
+function dnext_form_builder_webform_jsonschema_ui_schema_alter(array &$uiSchema, Drupal\webform\Entity\Webform $webform) {
+
+  /** @var TransformerExtended $jsonSchemaTransformerExt */
+  $jsonSchemaTransformerExt = \Drupal::service('dnext_form_builder.transformer_extended');
+  $uiSchema = $jsonSchemaTransformerExt->toUiSchemaExtended($uiSchema, $webform);
+}
