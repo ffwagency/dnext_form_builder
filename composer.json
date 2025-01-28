@@ -1,5 +1,5 @@
 {
-    "name": "drupal/dnext_form_builder",
+    "name": "jakala/dnext_form_builder",
     "description": "DNext form builder, designed to handle decoupled form rendering and submissions.",
     "type": "drupal-module",
     "license": "GPL-2.0-or-later"
