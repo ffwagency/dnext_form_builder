@@ -4,4 +4,5 @@ description: 'A custom module to alter webform JSON schema.'
 core_version_requirement: ^10 || ^11
 package: Custom
 dependencies:
+  - webform_rest:webform_rest
   - webform_jsonschema:webform_jsonschema
